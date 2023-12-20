@@ -20,7 +20,7 @@ require __DIR__ . '/vendor/autoload.php';
 $client  = Application::client(authToken: '<authentication-token>');
 
 // List
-$neurons = $client->list();
+$applications = $client->list();
 
 // Create
 $created = $client->create(
@@ -32,7 +32,7 @@ $created = $client->create(
 
 // Update
 $updated = $client->update(
-    id: $created->neuron_id,
+    id: $created->application_id,
     name: 'My Application 1',
     url: 'localhost:7788',
     webhook: 'localhost:7788/webhook',
@@ -40,10 +40,10 @@ $updated = $client->update(
 );
 
 // Fetch Info
-$viewed = $neuron->read('2eb91dc3-b8ad-4d41-a207-963cec055fac');
+$viewed = $application->read('2eb91dc3-b8ad-4d41-a207-963cec055fac');
 
 // Delete
-$message = $neuron->delete($created->neuron_id);
+$message = $application->delete($created->neuron_id);
 
 ```
 
@@ -63,7 +63,7 @@ use SpiralOver\Mailer\Client\Mailer;
 require __DIR__ . '/vendor/autoload.php';
 
 $client  = Mailer::client(authToken: '<authentication-token>');
-$response = $application->send(
+$response = $client->send(
     appId: '2eb91dc3-b8ad-4d41-a207-963cec055fab',
     mails: [
         MailData::create(
