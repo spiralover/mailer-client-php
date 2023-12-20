@@ -1,8 +1,8 @@
 {
     "name": "spiralover/mailer-client",
     "description": "Webhook Mail Routing Client",
-    "type": "project",
-    "license": "Private",
+    "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "ahmard",
