@@ -13,11 +13,11 @@ Mail Router PHP Client
 ```php
 <?php
 
-use SpiralOver\Mailer\Client\Mailer;
+use SpiralOver\Mailer\Client\Application;
 
 require __DIR__ . '/vendor/autoload.php';
 
-$client  = Mailer::client(authToken: '<authentication-token>');
+$client  = Application::client(authToken: '<authentication-token>');
 
 // List
 $neurons = $client->list();
@@ -58,11 +58,11 @@ use GuzzleHttp\Exception\GuzzleException;
 use SpiralOver\Mailer\Client\Dto\Mailbox;
 use SpiralOver\Mailer\Client\Dto\MailData;
 use SpiralOver\Mailer\Client\Exceptions\RequestFailureException;
-use SpiralOver\Mailer\Client\Application;
+use SpiralOver\Mailer\Client\Mailer;
 
 require __DIR__ . '/vendor/autoload.php';
 
-$client  = Application::client(authToken: '<authentication-token>');
+$client  = Mailer::client(authToken: '<authentication-token>');
 $response = $application->send(
     appId: '2eb91dc3-b8ad-4d41-a207-963cec055fab',
     mails: [
