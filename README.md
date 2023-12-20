@@ -75,14 +75,40 @@ $response = $application->send(
             ),
             receiver: [
                 Mailbox::create(
-                    name: 'Ahmad Mustapha',
-                    email: 'ahmad.mustapha@spiralover.com'
+                    name: 'Jane Doe',
+                    email: 'jane.doe@spiralover.com'
                 )
             ]
         )
     ]
 );
 ```
+
+You can also specify **cc**, **bcc** & **reply to**
+```php
+MailData::create(
+    [...],
+    cc: [
+        Mailbox::create(
+            name: 'Jane',
+            email: 'jane@spiralover.com'
+        )
+    ],
+    bcc: [
+        Mailbox::create(
+            name: 'Shaheed',
+            email: 'shaheed@spiralover.com'
+        )
+    ],
+    reply_to: [
+        Mailbox::create(
+            name: 'Tom Tucker',
+            email: 'tom.tucker@spiralover.com'
+        )
+    ]
+);
+```
+
 
 ## Client Options
 
